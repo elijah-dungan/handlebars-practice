@@ -1,13 +1,13 @@
 'use-strict';
 
-// STEP 1: create string with html featuring data inputs incapsulated by handlebars
-// STEP 2: compile the string using the Handlebars.compile() method;
+// STEP 1: Grab the template from the script element in index.html. The Template can also exist in app.js as shown in Example 2
+// STEP 2: compile the template using the Handlebars.compile() method;
 // STEP 3: create object input data to be inserted
 // STEP 4: append this data to the DOM
 
 /* -----Example 1----- */
 
-var myInfo = '<p> My name is {{name}} and I live at {{street}} in {{city}}, {{state}} </p>'; // html with handlebars
+var myInfo = document.getElementById('template-1').innerHTML; // html with handlebars
 
 var template1 = Handlebars.compile(myInfo); // compiles myInfo
 
