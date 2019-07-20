@@ -9,9 +9,38 @@
         <div id="example-1"></div>
         <div id="example-2"></div>
         <div id="example-3"></div>
+        <div id="example-4"></div>
+        <div id="example-5"></div>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="./js/handlebars-v4.1.2.js" type="text/javascript"></script>
         <script id="template-1" type="text/x-handlebars-template">
             <p>My name is {{name}} and I live at {{street}} in {{city}}, {{state}}</p>
+        </script>
+        <script id="template-3" type="text/x-handlebars-template">
+            <h3>My Favorite {{name}} Quotes</h3>
+            <ol>
+                {{#each quotes}}
+                    <li>{{quote}}</li>
+                {{/each}}
+            </ol>
+        </script>
+        <script id="template-4" type="text/x-handlebars-template">
+            {{#each animals}}
+                <p>
+                    The {{capitalize this.name}} says
+                    {{#if this.noise}}
+                        "{{this.noise}}".
+                    {{else}}
+                        nothing since its a {{this.name}}.
+                    {{/if}}
+                </p>
+            {{/each}}
+        </script>
+        <script id="template-5" type="text/x-handlebars-template">
+            <p> The <b> {{#uppercase}} konami {{/uppercase}} </b> Code is a cheat code that appears in many video games.</p>
+            <p>During the title screen before the game demo begins, the player could press the following sequence of buttons on the game controller to enable the cheat:</p>
+            <p>{{#uppercase}}{{code}}{{/uppercase}}</p>
+            <p>The code is also present as an Easter egg on a number of websites.</p>
         </script>
         <script src="./js/app.js" type="text/javascript"></script>
     </body>
